@@ -8,5 +8,6 @@ namespace InterstPage.Models
     public class InterstModel
     {
         public List<PhotoModel> MyInterstsList { get; set; }
+        public List<RssItem> RssItems { get; set; } = new List<RssItem>();
     }
 }

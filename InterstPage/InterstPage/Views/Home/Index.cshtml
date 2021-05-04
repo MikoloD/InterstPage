@@ -2,8 +2,7 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide mt-2" data-ride="carousel">
     <ol class="carousel-indicators">
         @for (int i = 0; i < Model.MyInterstsList.Count(); i++)
         {
@@ -35,3 +34,32 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+<h1 class="text-center mt-5" id="interests">Intrests</h1>
+<div class="row">
+    @foreach (var item in Model.MyInterstsList)
+    {
+        <div class="col-sm-6">
+            <div class="card mt-5">
+                <div class="card-body text-center">
+                    <h5 class="card-title">@(item.PhotoDesccription)</h5>
+                    <p class="card-text">@(item.LongerDescrition)</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<h1 class="text-center mt-5" id="news">Wiadomości</h1>
+<div class="row">
+    @foreach (var item in Model.RssItems)
+    {
+        <div class="col-sm-6">
+            <div class="card mt-5">
+                <div class="card-body text-center">
+                    <h5 class="card-title">@(item.Title)</h5>
+                    <p class="card-text">@Html.Raw(@item.Description)</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
