@@ -2,6 +2,11 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+<style>
+    #map {
+        height: 500px;
+    }
+</style>
 <div id="carouselExampleIndicators" class="carousel slide mt-2" data-ride="carousel">
     <ol class="carousel-indicators">
         @for (int i = 0; i < Model.MyInterstsList.Count(); i++)
@@ -62,4 +67,21 @@
         </div>
     }
 </div>
+<div class="mt-5" id="map"></div>
+<script>
+    var map;
+    function initMap() {
+        const myLatLng = { lat: 49.82238910765634, lng:19.058462374705396 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 12,
+            center: myLatLng,
+        });
+        new google.maps.Marker({
+            position: myLatLng,
+            map,
+            title: "Hello World!",
+        });
+    }
 
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJOZd-P3bAJXBAYtfryQT_GTv61uRehMs&callback=initMap" async defer></script>
