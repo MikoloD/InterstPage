@@ -18,11 +18,6 @@ namespace InterstPage.Controllers
             List<PhotoModel> IntrestList = new List<PhotoModel>()
             {
                 new PhotoModel {
-                    URL="https://www.muzykotekaszkolna.pl/!data/resources/graphics/co_slychac/Teatr_Wielki_ok.1900.jpg",
-                    PhotoDesccription="Architektura",
-                    LongerDescrition=loremIpsum
-                },
-                new PhotoModel {
                     URL="https://e-shareef.com/images/portfolio/portfolio-08-large.jpg",
                     PhotoDesccription="Programowanie",
                     LongerDescrition=loremIpsum
@@ -36,6 +31,11 @@ namespace InterstPage.Controllers
                     URL="https://www.zachod24.pl/wp-content/uploads/sites/5/2020/11/rzad-1918-2020-11-10_13-44-08_611799.jpg",
                     PhotoDesccription="Historia",
                     LongerDescrition=loremIpsum
+                },
+                new PhotoModel {
+                    URL="https://www.muzykotekaszkolna.pl/!data/resources/graphics/co_slychac/Teatr_Wielki_ok.1900.jpg",
+                    PhotoDesccription="Architektura",
+                    LongerDescrition=loremIpsum
                 }
             };
             return IntrestList;
@@ -45,14 +45,7 @@ namespace InterstPage.Controllers
             "https://news.google.com/rss?hl=pl&gl=PL&ceid=PL:pl",
             "https://wydarzenia.interia.pl/polska/feed"
         };
-        private readonly ILogger<HomeController> _logger;
         private InterstModel model = new InterstModel();
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
             List<RssItem> RssList = new List<RssItem>();
@@ -76,7 +69,12 @@ namespace InterstPage.Controllers
             model.MyInterstsList = CreateModel();
             return View(model);
         }
+        private readonly ILogger<HomeController> _logger;
 
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
         public IActionResult Privacy()
         {
             return View();
