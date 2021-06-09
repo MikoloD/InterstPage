@@ -33,7 +33,7 @@ namespace InterstPage.Controllers
                     LongerDescrition=loremIpsum
                 },
                 new PhotoModel {
-                    URL="https://www.muzykotekaszkolna.pl/!data/resources/graphics/co_slychac/Teatr_Wielki_ok.1900.jpg",
+                    URL="https://upload.wikimedia.org/wikipedia/commons/f/f1/Theatre_Square_Warsaw_about_1900.jpg",
                     PhotoDesccription="Architektura",
                     LongerDescrition=loremIpsum
                 }
